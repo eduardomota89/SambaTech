@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Util {
@@ -43,9 +44,11 @@ public class Util {
 	 */
 	public void preencheLogin(String usuario, String senha) {
 
+		driver.findElement(By.id("inputEmail")).click();
 		driver.findElement(By.id("inputEmail")).clear();
 		driver.findElement(By.id("inputEmail")).sendKeys(usuario);
 
+		driver.findElement(By.id("inputPassword")).click();
 		driver.findElement(By.id("inputPassword")).clear();
 		driver.findElement(By.id("inputPassword")).sendKeys(senha);
 
@@ -53,10 +56,11 @@ public class Util {
 	}
 
 	public void verificaTexto(String id, String msg) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(id)));
 		if (driver.findElement(By.id(id)).getText().equals(msg)) {
 			System.out.println(msg + " ===> OK");
 		} else {
-			System.out.println(msg + " ===> FAIL");
+			System.out.println(" ===> FAIL");
 		}
 	}
 }

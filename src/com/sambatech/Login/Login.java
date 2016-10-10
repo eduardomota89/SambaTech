@@ -13,6 +13,7 @@ public class Login extends Util {
 
 		propertyChrome();
 		confChrome();
+		
 		preencheLogin("avaliacao_qa_samba@sambatech.com.br", "");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password_incorrect")));
 		verificaTexto("password_incorrect", "Email ou senha incorretos. Saiba Mais");
@@ -21,7 +22,7 @@ public class Login extends Util {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password_incorrect")));
 		verificaTexto("password_incorrect", "Email ou senha incorretos. Saiba Mais");
 
-		preencheLogin("avaliacao_qa_samba", "123456789");
+		preencheLogin("avaliacao_qa_samba@sambatech.com.br", "123456789");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password_incorrect")));
 		verificaTexto("password_incorrect", "Email ou senha incorretos. Saiba Mais");
 

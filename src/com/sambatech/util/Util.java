@@ -22,7 +22,6 @@ public class Util {
 	@Before
 	public void confChrome() {
 		driver.get("http://52.2.166.124:8085/auth/login");
-//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
 
